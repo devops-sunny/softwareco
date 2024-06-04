@@ -96,8 +96,8 @@ exports.deactivateWorkspace = async (req, res) => {
 
 exports.employeesworkspaces = async (req, res) => {
     try {
-        const workspaces = await Workspace.find().lean();
-        const workspaceIds = workspaces.map(workspace => workspace._id.toString());
+        const workspaces = await Workspace?.find()?.lean();
+        const workspaceIds = workspaces.map(workspace => workspace._id?.toString());
 
         const employees = await Employee.find({
             workspace: { $in: workspaceIds }

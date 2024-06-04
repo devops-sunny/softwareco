@@ -63,7 +63,7 @@ const AllEmployeeForm = ({ data }) => {
                 />
               </label>
             </div>
-            <div className="btn" onClick={downloadCSV}>
+            <div className="btn" onClick={()=> downloadCSV()}>
               View csv
             </div>
             <div className="btn" onClick={() => openModal()}>ADD Employee</div>

@@ -13,7 +13,7 @@ exports.registerEmployee = async (req, res) => {
         companyAddress,
         experience} = req.body;
    
-        // const profilePicture = req.file ? `http://localhost:5000/${req.file.path}` : null;
+        const profilePicture = req.file ? `http://localhost:5000/${req.file.path}` : null;
     
      try {
         let user = await User.findOne({ email });
@@ -30,7 +30,7 @@ exports.registerEmployee = async (req, res) => {
             dob,
             department,
             mobile,
-            profilePicture :"https://www.softwareco.com/wp-content/uploads/2020/09/logo.png",
+            profilePicture : profilePicture,
             joiningDate,
             address,
             companyAddress,
@@ -38,7 +38,7 @@ exports.registerEmployee = async (req, res) => {
         });
           
 
-        if(role == "employee" || "workspaceadmin"){
+        if(role == "employee"){
             let employee = await Employee.findOne({ email });
        
             employee = new Employee({

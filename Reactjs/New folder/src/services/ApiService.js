@@ -126,6 +126,7 @@ const Delete = (url, payload, options = defaultOptions) => {
     });
 };
 
+
 const showLoader = () => {
   document.body.classList.add("loading-indicator");
 };

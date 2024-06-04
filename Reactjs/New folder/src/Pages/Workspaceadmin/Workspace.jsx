@@ -6,8 +6,12 @@ import Employees from "../Employee/Employees";
 import AllEmployeeForm from "./AllEmployeeForm";
 import Img  from "../../assets/imgs/customer02.jpg"
 import Employeesworkspaces from "../../component/Employeesworkspaces";
+import { useSelector } from "react-redux";
 
 const Workspace = () => {
+  const role = useSelector((state) => state.Auth.role);
+
+  
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -38,7 +42,7 @@ const Workspace = () => {
           <CardBox />
           <Employees   bit={false}/>
           {data && <AllEmployeeForm data={data} />}
-      <Employeesworkspaces />
+       { role === "superadmin" && <Employeesworkspaces /> }
         </div>
       </div>
     </>
