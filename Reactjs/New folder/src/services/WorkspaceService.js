@@ -24,7 +24,6 @@ export const getviewWorkspaceData = () => {
 };
 
 export const downloadCSV = () => {
-  console.log("hi");
   const token = localStorage.getItem("Token");
   axios({
     url: `${URL}export-employees`,
